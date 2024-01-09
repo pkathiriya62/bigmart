@@ -69,41 +69,44 @@ class _Screen2State extends State<Screen2> {
             SmoothPageIndicator(
                 controller: controller, // PageController
                 count: 3,
-                effect: WormEffect(), // your preferred effect
+                effect: ExpandingDotsEffect(), // your preferred effect
                 onDotClicked: (index) {}),
             SizedBox(
-              height: height * 0.07,
+              height: height * 0.17,
             ),
-            Row(
-              children: [
-                globaltext(
-                  text: AppText.Names,
-                  textStyle: TextStyle(
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
-                    color: Appcolor.Greycolor,
-                  ),
-                ),
-                Spacer(),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Appcolor.primerycolor),
-                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)))),
-                  child: globaltext(
-                    text: AppText.NameS,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  globaltext(
+                    text: AppText.Names,
                     textStyle: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
                       fontFamily: 'Inter',
-                      color: Appcolor.whitecolor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: Appcolor.Greycolor,
                     ),
                   ),
-                ),
-              ],
+                  Spacer(),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll(Appcolor.primerycolor),
+                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)))),
+                    child: globaltext(
+                      text: AppText.NameS,
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Inter',
+                        color: Appcolor.whitecolor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
