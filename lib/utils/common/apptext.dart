@@ -6,7 +6,7 @@ class AppText {
   static String Names = 'Skip';
   static String NameS = 'Next';
   static String HomeText = 'Easy and Online Payment';
-  static String Hometext =
+  static String Hometext1 =
       'You can pay cash on delivery and Card payment is available';
   static String HomeW = 'Quick Delivery at Your Doorstep';
   static String HomeWd = 'Deliver your food at your Doorstep';

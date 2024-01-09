@@ -3,6 +3,7 @@ import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Screen2 extends StatefulWidget {
@@ -65,8 +66,13 @@ class _Screen2State extends State<Screen2> {
             SizedBox(
               height: height * 0.05,
             ),
+            SmoothPageIndicator(
+                controller: controller, // PageController
+                count: 3,
+                effect: WormEffect(), // your preferred effect
+                onDotClicked: (index) {}),
             SizedBox(
-              height: height * 0.03,
+              height: height * 0.07,
             ),
             Row(
               children: [

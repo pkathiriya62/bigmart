@@ -1,6 +1,9 @@
 // import 'package:bigmart/view/Onbording/screen1.dart';
 // import 'package:bigmart/view/Auth/screen5.dart';
-import 'package:bigmart/view/Onbording/screen3.dart';
+// import 'package:bigmart/view/Onbording/screen1.dart';
+// import 'package:bigmart/view/Onbording/screen2.dart';
+// import 'package:bigmart/view/Onbording/screen3.dart';
+import 'package:bigmart/view/Onbording/screen4.dart';
 // import 'package:bigmart/view/Onbording/screen4.dart';
 // import 'package:bigmart/view/Onbording/screen2.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Screen3(),
+      home: screen4(),
     );
   }
 }

@@ -3,24 +3,22 @@ import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
-// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Screen3 extends StatefulWidget {
-  const Screen3({super.key});
+class screen3 extends StatefulWidget {
+  const screen3({super.key});
 
   @override
-  State<Screen3> createState() => _Screen3State();
+  State<screen3> createState() => _screen3State();
 }
 
-class _Screen3State extends State<Screen3> {
+class _screen3State extends State<screen3> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
-
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    // var width= MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Padding(
+       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,9 +42,9 @@ class _Screen3State extends State<Screen3> {
               height: height * 0.02,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 60),
               child: globaltext(
-                text: AppText.Hometext,
+                text: AppText.Hometext1,
                 textStyle: TextStyle(
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w400,
@@ -59,38 +57,55 @@ class _Screen3State extends State<Screen3> {
               height: height * 0.03,
             ),
             Image.asset(
-              Appimage.LoginPage,
+              Appimage.LoginPage1,
               scale: 3,
             ),
             SizedBox(
               height: height * 0.05,
             ),
+            SmoothPageIndicator(
+                controller: controller, // PageController
+                count: 3,
+                effect: WormEffect(), // your preferred effect
+                onDotClicked: (index) {}),
             SizedBox(
-              height: height * 0.03,
+              height: height * 0.07,
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: globaltext(
-                text: AppText.Names,
-                textStyle: TextStyle(
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
-                  color: Appcolor.Greycolor,
+            Row(
+              children: [
+                globaltext(
+                  text: AppText.Names,
+                  textStyle: TextStyle(
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Appcolor.Greycolor,
+                  ),
                 ),
-              ),
+                Spacer(),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Appcolor.primerycolor),
+                      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)))),
+                  child: globaltext(
+                    text: AppText.NameS,
+                    textStyle: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Inter',
+                      color: Appcolor.whitecolor,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStatePropertyAll(Appcolor.primerycolor),
-              ),
-              child: globaltext(text: AppText.NameS),
-            )
           ],
         ),
       ),
+
     );
   }
 }
