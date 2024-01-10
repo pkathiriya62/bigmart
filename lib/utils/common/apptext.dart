@@ -10,6 +10,8 @@ class AppText {
       'You can pay cash on delivery and Card payment is available';
   static String HomeW = 'Quick Delivery at Your Doorstep';
   static String HomeWd = 'Deliver your food at your Doorstep';
-  static String Screen = 'Sign In';
-  static String Screen5 = 'Hi! Welcome back, you’ve been missed';
+  static String login = 'Sign In';
+  static String login1 = 'Hi! Welcome back, you’ve been missed';
+  
+  
 }

@@ -1,7 +1,8 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
-import 'package:bigmart/utils/common/container.dart';
+import 'package:bigmart/utils/common/pageview.dart';
+
 import 'package:bigmart/view/Onbording/logoscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
