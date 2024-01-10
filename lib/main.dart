@@ -1,6 +1,6 @@
 // import 'package:bigmart/view/Onbording/loginscreen.dart';
 import 'package:bigmart/view/Auth/loginscreen.dart';
-import 'package:bigmart/view/Onbording/onboardingscreen.dart';
+// import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 // import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 import 'package:flutter/material.dart';
 
