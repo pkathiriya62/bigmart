@@ -1,4 +1,4 @@
-import 'package:bigmart/view/Onbording/pageview.dart';
+import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
