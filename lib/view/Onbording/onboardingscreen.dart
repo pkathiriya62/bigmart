@@ -61,7 +61,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
           SmoothPageIndicator(
               controller: controller, // PageController
               count: 3,
-              effect: ExpandingDotsEffect(), // your preferred effect
+              effect: const ExpandingDotsEffect(), // your preferred effect
               onDotClicked: (index) {}),
         ],
       ),
@@ -76,9 +76,9 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => Bottomnavigation()));
+                          MaterialPageRoute(builder: (_) => const Bottomnavigation()));
                     },
-                    child: Text("Start")),
+                    child: const Text("Start")),
               ),
             )
           : Container(
@@ -99,7 +99,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                   TextButton(
                     onPressed: () {
                       controller.nextPage(
-                        duration: Duration(microseconds: 500),
+                        duration: const Duration(microseconds: 500),
                         curve: Curves.easeInOut,
                       );
                     },
@@ -110,7 +110,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Appcolor.primerycolor),
-                            child: Center(child: Text('Next')))),
+                            child: const Center(child: Text('Next')))),
                   ),
                 ],
               ),

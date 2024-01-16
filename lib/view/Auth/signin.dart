@@ -11,7 +11,7 @@ class SigninScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -47,30 +47,29 @@ class SigninScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              CommonTextFieldWidget(
+              const CommonTextFieldWidget(
                 text: 'Name',
                 isPassword: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              CommonTextFieldWidget(
+              const CommonTextFieldWidget(
                 text: 'Email',
                 isPassword: false,
                 suffixicon: Icon(Icons.password),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              CommonTextFieldWidget(
+              const CommonTextFieldWidget(
                 text: 'Password',
                 isPassword: false,
                 suffixicon: Icon(Icons.password),
               ),
-              
             ],
           ),
         ),
