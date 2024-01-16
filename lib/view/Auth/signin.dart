@@ -1,23 +1,17 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/apptext.dart';
+import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
 import 'package:flutter/material.dart';
-import '../../utils/common/globaltext.dart';
 
-class loginscreen extends StatefulWidget {
-  const loginscreen({super.key});
+class SigninScreen extends StatelessWidget {
+  const SigninScreen({super.key});
 
-  @override
-  State<loginscreen> createState() => _loginscreenState();
-}
-
-class _loginscreenState extends State<loginscreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    // var width= MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Padding(
+      body:  Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -29,7 +23,7 @@ class _loginscreenState extends State<loginscreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: globaltext(
-                  text: AppText.login,
+                  text: AppText.signin,
                   textStyle: TextStyle(
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w600,
@@ -44,7 +38,7 @@ class _loginscreenState extends State<loginscreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: globaltext(
-                  text: AppText.login1,
+                  text: AppText.signin1,
                   textStyle: TextStyle(
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
@@ -57,8 +51,16 @@ class _loginscreenState extends State<loginscreen> {
                 height: 30,
               ),
               CommonTextFieldWidget(
+                text: 'Name',
+                isPassword: false,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              CommonTextFieldWidget(
                 text: 'Email',
                 isPassword: false,
+                suffixicon: Icon(Icons.password),
               ),
               SizedBox(
                 height: 30,
@@ -68,6 +70,7 @@ class _loginscreenState extends State<loginscreen> {
                 isPassword: false,
                 suffixicon: Icon(Icons.password),
               ),
+              
             ],
           ),
         ),

@@ -3,8 +3,8 @@ import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
 
-class GobleButton extends StatelessWidget {
-  const GobleButton({super.key});
+class GlobalButton extends StatelessWidget {
+  const GlobalButton({super.key});
 
   @override
   Widget build(BuildContext context) {

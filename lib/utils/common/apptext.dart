@@ -12,6 +12,10 @@ class AppText {
   static String HomeWd = 'Deliver your food at your Doorstep';
   static String login = 'Sign In';
   static String login1 = 'Hi! Welcome back, you’ve been missed';
+  static String signin = 'Create Account';
+  static String signin1 = 'Fill your information below or register With your social account';
+
+
   
   
 }
