@@ -1,14 +1,6 @@
-// import 'package:bigmart/view/Onbording/loginscreen.dart';
-// import 'package:bigmart/view/Auth/loginscreen.dart';
-// import 'package:bigmart/view/Auth/loginscreen.dart';
-// import 'package:bigmart/view/Auth/signin.dart';
-// import 'package:bigmart/view/Onbording/onboardingscreen.dart';
-// import 'package:bigmart/view/Onbording/onboardingscreen.dart';
-// import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 import 'package:bigmart/view/Auth/otp.dart';
-// import 'package:bigmart/view/Auth/signin.dart';
-// import 'package:bigmart/view/Auth/signupscreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,14 +11,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: VerifyScreen(),
+    return ScreenUtilInit(
+      designSize: Size(360, 800),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: VerifyScreen(),
+        );
+      }
     );
   }
 }

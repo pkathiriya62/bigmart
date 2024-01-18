@@ -1,15 +1,9 @@
-// import 'package:bigmarket/utils/commans/appcolor.dart';
-// import 'package:bigmarket/utils/commans/apptext.dart';
-// import 'package:bigmarket/utils/commans/globaltext.dart';
-// import 'package:bigmarket/utils/commans/textbutton.dart';
 import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
-// import 'package:otp_text_field/otp_field.dart';
-// import 'package:otp_text_field/style.dart';
 
 class VerifyScreen extends StatefulWidget {
   const VerifyScreen({super.key});
@@ -85,11 +79,9 @@ class _VerifyScreenState extends State<VerifyScreen> {
                     fontFamily: 'Inter'),
               ),
               SizedBox(
-                height: height*0.05,
+                height: height * 0.05,
               ),
-
               GlobalButton(text: 'Verify'),
-
             ],
           ),
         ),

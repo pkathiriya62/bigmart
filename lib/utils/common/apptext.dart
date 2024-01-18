@@ -16,11 +16,6 @@ class AppText {
   static String signin1 = 'Fill your information below or register \n With your social account';
   static String verify = 'Verify Code';
   static String verify1 = 'Please enter the code we just sent to email \n example@gmail.com';
-  
   static String resend = 'Resend code';
-  static String otp = 'Didn’t receive OTP?';
-
-
-  
-  
+  static String otp = 'Didn’t receive OTP?'; 
 }
