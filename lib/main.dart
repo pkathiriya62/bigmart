@@ -1,10 +1,13 @@
 // import 'package:bigmart/view/Onbording/loginscreen.dart';
 // import 'package:bigmart/view/Auth/loginscreen.dart';
 // import 'package:bigmart/view/Auth/loginscreen.dart';
-import 'package:bigmart/view/Auth/signin.dart';
+// import 'package:bigmart/view/Auth/signin.dart';
 // import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 // import 'package:bigmart/view/Onbording/onboardingscreen.dart';
 // import 'package:bigmart/view/Onbording/onboardingscreen.dart';
+import 'package:bigmart/view/Auth/otp.dart';
+// import 'package:bigmart/view/Auth/signin.dart';
+// import 'package:bigmart/view/Auth/signupscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SigninScreen(),
+      home: VerifyScreen(),
     );
   }
 }
