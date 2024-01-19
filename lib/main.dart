@@ -1,4 +1,5 @@
-import 'package:bigmart/view/screenshome/shopscreen.dart';
+import 'package:bigmart/view/Auth/bottomnavigation.dart';
+// import 'package:bigmart/view/screenshome/shopscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: ShopScreen(),
+            home: BotttomNavigationbarScreen(),
           );
         });
   }

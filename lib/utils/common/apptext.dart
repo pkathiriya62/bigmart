@@ -46,10 +46,5 @@ class Apptext {
     'Atta, Ric...'
   ];
 
-  static List<Map> shopgridviewdetail = [
-    {"name": "Chocolate", "subname": "Bittersweet Chocolate", "qty": "2 × 90g"},
-    {"name": "Egg", "subname": "Egg box", "qty": "2 × 80g"},
-    {"name": "Butter", "subname": "Vegetable oil butter", "qty": "2 × 85g"},
-    {"name": "Beer", "subname": "Lager beer", "qty": "1/2 lit"},
-  ];
+  
 }

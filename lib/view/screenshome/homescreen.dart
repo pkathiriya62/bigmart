@@ -42,9 +42,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icons.access_time_outlined,
                         color: Colors.white,
                       ),
-                      // SizedBox(
-                      //   width: width * 0.011,
-                      // ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -76,11 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Icon(
                           Icons.shopping_cart_outlined,
-                          // size: 25,
                           color: Colors.white,
                         ),
                       ),
-
                       Container(
                         height: height * 0.10,
                         width: width * 0.100,
@@ -90,7 +85,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: const Icon(
                           Icons.menu,
-                          // size: 30.0,
                           color: Colors.white,
                         ),
                       ),
@@ -171,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         return Container(
                           decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(12)),
+                                  const BorderRadius.all(Radius.circular(12)),
                               border: Border.all(
                                 color: AppColor.gridveiwcolor,
                               )),
@@ -185,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Appimage.gridviewimage[index],
                                 scale: 2.5,
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Text(Apptext.gridviewname[index]),
                               SizedBox(
                                 height: height * 0.011,
@@ -203,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: AppColor.homebtmcontainercolor,
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
                   ),
                   child: Row(
                     children: [
@@ -247,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: ButtonStyle(
                                   backgroundColor: MaterialStatePropertyAll(
                                       AppColor.primarycolor),
-                                  shape: MaterialStatePropertyAll(
+                                  shape: const MaterialStatePropertyAll(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(16),
@@ -268,10 +262,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Image.asset(
                         Appimage.homebtmcontainerimage,
-                        scale: 4,
+                        scale: 2,
                       )
                     ],
                   ),
