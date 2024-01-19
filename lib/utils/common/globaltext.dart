@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class globaltext extends StatelessWidget {
+class Globaltext extends StatelessWidget {
   final String text;
-  TextStyle? textStyle;
-  String? fontfamily;
-  String? fontsize;
-  String? fontweight;
-  Color? color;
-  globaltext(
-      {super.key,
-      required this.text,
-      this.fontfamily,
-      this.color,
-      this.textStyle,
-      this.fontsize,
-      this.fontweight});
+  final Color? color;
+  final double? fontsize;
+  final dynamic fontweight;
+  final String? fontfamily;
+  final TextStyle? textStyle;
+
+
+    Globaltext({
+    super.key,
+    required this.text,
+    this.color,
+    this.fontsize,
+    this.fontweight,
+    this.fontfamily, this.textStyle
+  });
+
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       textAlign: TextAlign.center,
-      style: textStyle ??
-          TextStyle(
-            fontFamily: fontfamily ?? 'Poppins',
-            color: color ?? Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.w500,
-          ),
+      style: textStyle ?? TextStyle(
+
+        color: color ?? Colors.black,
+        fontSize: fontsize ?? 14,
+        fontWeight: fontweight ?? FontWeight.w500,
+        fontFamily: fontfamily ?? 'InknutAntiqua',
+      ),
     );
   }
 }

@@ -1,57 +1,48 @@
 import 'package:bigmart/utils/common/appcolor.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class CommonTextFieldWidget extends StatefulWidget {
-  const CommonTextFieldWidget({
-    // this.titleText = '',
-    // this.titleTextAlign = TextAlign.center,
-    required this.text,
-    required this.isPassword,
-    this.suffixicon,
-    // required this.hintText,
-    // required this.textController,
-  });
+import 'globaltext.dart';
 
-  // final String titleText;
-  // final TextAlign titleTextAlign;
+class TextFieldWidget extends StatelessWidget {
   final String text;
-  final bool isPassword;
-  final suffixicon;
-  //final String hintText;
-  // final TextEditingController textController;
+  final Icon? icon;
 
-  @override
-  _CommonTextFieldWidgetState createState() => _CommonTextFieldWidgetState();
-}
+  const TextFieldWidget({super.key, required this.text, this.icon});
 
-class _CommonTextFieldWidgetState extends State<CommonTextFieldWidget> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          widget.text,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-          ),
+        Globaltext(
+          text: text,
+          fontfamily: GoogleFonts.inter().toString(),
+          fontsize: 16,
         ),
-        const SizedBox(
-          height: 5,
+        SizedBox(
+          height: height * 0.010,
         ),
         TextField(
-          obscureText: widget.isPassword,
           decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+            suffixIcon: icon,
+            focusedBorder: OutlineInputBorder(
+              borderRadius:BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: AppColor.textfieldcolor,
+                width: 2.0,
+              ),
             ),
-            contentPadding: const EdgeInsets.all(10.0),
-            // hintText: widget.hintText, // pass the hint text parameter here
-            hintStyle: TextStyle(color: Appcolor.primerycolor),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: AppColor.textfieldcolor,
+                width: 2.0,
+              ),
+            ),
           ),
-          style: TextStyle(color: Appcolor.primerycolor),
         ),
       ],
     );

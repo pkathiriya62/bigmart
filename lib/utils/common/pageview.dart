@@ -20,13 +20,13 @@ class onboarding extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 80),
-            child: globaltext(
+            child: Globaltext(
               text: text,
               textStyle: TextStyle(
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w500,
                 fontSize: height * 0.03,
-                color: Appcolor.primerycolor,
+                color: AppColor.primarycolor,
               ),
             ),
           ),
@@ -35,13 +35,13 @@ class onboarding extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
-            child: globaltext(
+            child: Globaltext(
               text: subtext,
               textStyle: TextStyle(
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
-                color: Appcolor.Greycolor,
+                color: AppColor.verifysubtitlecolor,
               ),
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
+
 import 'package:bigmart/utils/common/pageview.dart';
 import 'package:bigmart/view/Auth/bottomnavigation.dart';
 
@@ -41,19 +42,19 @@ class _PageViewScreenState extends State<PageViewScreen> {
               },
               children: [
                 onboarding(
-                  text: AppText.Name,
-                  subtext: AppText.NameScreen,
-                  img: Appimage.Loginpage,
+                  text: Apptext.headtext1,
+                  subtext: Apptext.subtext1,
+                  img: Appimage.imageview1,
                 ),
                 onboarding(
-                  text: AppText.HomeText,
-                  subtext: AppText.Hometext1,
-                  img: Appimage.LoginPage1,
+                  text: Apptext.headtext2,
+                  subtext: Apptext.subtext2,
+                  img: Appimage.imageview2,
                 ),
                 onboarding(
-                  text: AppText.HomeW,
-                  subtext: AppText.HomeWd,
-                  img: Appimage.LoginPage2,
+                  text: Apptext.headtext3,
+                  subtext: Apptext.subtext3,
+                  img: Appimage.imageview3,
                 ),
               ],
             ),
@@ -70,13 +71,13 @@ class _PageViewScreenState extends State<PageViewScreen> {
               height: height * 0.05,
               width: width * 0.2,
               decoration: BoxDecoration(
-                  color: Appcolor.primerycolor,
+                  color: AppColor.primarycolor,
                   borderRadius: BorderRadius.circular(10)),
               child: Center(
                 child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => const Bottomnavigation()));
+                          MaterialPageRoute(builder: (_) => const BotttomNavigationbarScreen()));
                     },
                     child: const Text("Start")),
               ),
@@ -93,7 +94,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                     },
                     child: Text(
                       'Skip',
-                      style: TextStyle(color: Appcolor.Greycolor),
+                      style: TextStyle(color: AppColor.verifysubtitlecolor),
                     ),
                   ),
                   TextButton(
@@ -109,7 +110,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                             width: height * 0.09,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Appcolor.primerycolor),
+                                color: AppColor.primarycolor),
                             child: const Center(child: Text('Next')))),
                   ),
                 ],

@@ -18,22 +18,22 @@ class _Screen1State extends State<Screen1> {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Appcolor.primerycolor,
+      backgroundColor: AppColor.primarycolor,
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              Appimage.Logoimage,
+              Appimage.logo,
               scale: 2,
             ),
             SizedBox(width: width * 0.04),
-            globaltext(
-              text: AppText.Bigmart,
+            Globaltext(
+              text: Apptext.logoname,
               textStyle: TextStyle(
                 fontFamily: 'InknutAntiqua',
                 fontSize: 24,
-                color: Appcolor.whitecolor,
+                color: AppColor.textfieldcolor,
               ),
             ),
           ],

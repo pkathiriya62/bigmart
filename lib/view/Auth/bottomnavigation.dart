@@ -1,24 +1,31 @@
+
 import 'package:bigmart/utils/common/appcolor.dart';
-import 'package:bigmart/utils/common/appimage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bigmart/view/screenshome/cartscreen.dart';
+import 'package:bigmart/view/screenshome/homescreen.dart';
+import 'package:bigmart/view/screenshome/profilescreen.dart';
+import 'package:bigmart/view/screenshome/shopscreen.dart';
+import 'package:bigmart/view/screenshome/storescreen.dart';
 import 'package:flutter/material.dart';
 
-class Bottomnavigation extends StatefulWidget {
-  const Bottomnavigation({super.key});
+class BotttomNavigationbarScreen extends StatefulWidget {
+  const BotttomNavigationbarScreen({super.key});
 
   @override
-  State<Bottomnavigation> createState() => _BottomnavigationState();
+  State<BotttomNavigationbarScreen> createState() =>
+      _BotttomNavigationbarScreenState();
 }
 
-class _BottomnavigationState extends State<Bottomnavigation> {
+class _BotttomNavigationbarScreenState
+    extends State<BotttomNavigationbarScreen> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetoptions = <Widget>[
-    Text('data'),
-    Text('data1'),
-    Text('data2'),
-    Text('data3'),
-    Text('data4'),
+  static List WidgetOption = [
+    HomeScreen(),
+    ShopScreen(),
+    StoreScreen(),
+    CartScreen(),
+    ProfileScreen()
   ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -29,55 +36,55 @@ class _BottomnavigationState extends State<Bottomnavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetoptions.elementAt(_selectedIndex),
+        child: WidgetOption.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(
-                Appimage.homelogo,
-                height: 25,
+                'assets/images/homepage (5) 1.png',
+                height: 24,
                 color:
-                    _selectedIndex == 0 ? Appcolor.primerycolor : Colors.black,
+                    _selectedIndex == 0 ? AppColor.primarycolor : Colors.black,
               ),
-              label: "Home"),
+              label: 'Home'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                Appimage.shoplogo,
-                height: 25,
+                'assets/images/shop 1.png',
+                height: 24,
                 color:
-                    _selectedIndex == 1 ? Appcolor.primerycolor : Colors.black,
+                    _selectedIndex == 1 ? AppColor.primarycolor : Colors.black,
               ),
-              label: "Shop"),
+              label: 'Shop'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                Appimage.storelogo,
-                height: 25,
+                'assets/images/pin 1.png',
+                height: 24,
                 color:
-                    _selectedIndex == 2 ? Appcolor.primerycolor : Colors.black,
+                    _selectedIndex == 2 ? AppColor.primarycolor : Colors.black,
               ),
-              label: "Stores"),
+              label: 'Store'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                Appimage.cartlogo,
-                height: 25,
+                'assets/images/shopping-basket 1.png',
+                height: 24,
                 color:
-                    _selectedIndex == 3 ? Appcolor.primerycolor : Colors.black,
+                    _selectedIndex == 3 ? AppColor.primarycolor : Colors.black,
               ),
-              label: "Cart"),
+              label: 'Cart'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                Appimage.profilelogo,
-                height: 25,
+                'assets/images/user (6) 1.png',
+                height: 24,
                 color:
-                    _selectedIndex == 4 ? Appcolor.primerycolor : Colors.black,
+                    _selectedIndex == 4 ? AppColor.primarycolor : Colors.black,
               ),
-              label: "Profile"),
+              label: 'Profile')
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Appcolor.primerycolor,
-        unselectedItemColor: Appcolor.Greycolor,
+        selectedItemColor: AppColor.primarycolor,
+        unselectedItemColor: Colors.black,
         showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
