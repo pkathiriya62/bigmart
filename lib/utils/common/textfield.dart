@@ -1,7 +1,6 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'globaltext.dart';
 
 class TextFieldWidget extends StatelessWidget {
@@ -29,7 +28,7 @@ class TextFieldWidget extends StatelessWidget {
           decoration: InputDecoration(
             suffixIcon: icon,
             focusedBorder: OutlineInputBorder(
-              borderRadius:BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
                 color: AppColor.textfieldcolor,
                 width: 2.0,

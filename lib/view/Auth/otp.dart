@@ -1,4 +1,3 @@
-
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';

@@ -1,11 +1,8 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
-
 import 'package:bigmart/utils/common/pageview.dart';
 import 'package:bigmart/view/Auth/bottomnavigation.dart';
-
-// import 'package:bigmart/view/Onbording/logoscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -76,8 +73,11 @@ class _PageViewScreenState extends State<PageViewScreen> {
               child: Center(
                 child: TextButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => const BotttomNavigationbarScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const BotttomNavigationbarScreen()));
                     },
                     child: const Text("Start")),
               ),

@@ -1,10 +1,9 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/customappbar.dart';
-
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../utils/common/apptext.dart';
 
 class ShopScreen extends StatefulWidget {
@@ -34,28 +33,28 @@ List<Name> data = [
     name: "Chocolate",
     subname: 'Bittersweet Chocolate',
     qty: "2 × 90g",
-    image: 'assets/images/image-removebg-preview (84) 1.png',
+    image: 'assets/image/image-removebg-preview (84) 1.png',
     price: 120,
   ),
   Name(
     name: "Egg",
     subname: 'Egg box',
     qty: "2 × 80g",
-    image: 'assets/images/image-removebg-preview (85) 1.png',
+    image: 'assets/image/image-removebg-preview (85) 1.png',
     price: 80,
   ),
   Name(
     name: "Butter",
     subname: 'Vegetable oil butter',
     qty: '2 × 85g',
-    image: 'assets/images/image-removebg-preview (86) 1.png',
+    image: 'assets/image/image-removebg-preview (86) 1.png',
     price: 150,
   ),
   Name(
     name: "Beer",
     subname: 'Lager beer',
     qty: '1/2 lit',
-    image: 'assets/images/image-removebg-preview (89) 1.png',
+    image: 'assets/image/image-removebg-preview (89) 1.png',
     price: 100,
   ),
 ];
@@ -71,6 +70,7 @@ class _ShopScreenState extends State<ShopScreen> {
           CustomContainer(
             text: Apptext.shoptext,
           ),
+          SizedBox(height: 2.h),
           Expanded(
             child: GridView.builder(
               padding: EdgeInsets.zero,

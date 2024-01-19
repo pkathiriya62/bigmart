@@ -1,4 +1,3 @@
-
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
@@ -9,7 +8,6 @@ import 'package:bigmart/view/Auth/createaccount.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});

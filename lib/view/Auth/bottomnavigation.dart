@@ -1,4 +1,3 @@
-
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/view/screenshome/cartscreen.dart';
 import 'package:bigmart/view/screenshome/homescreen.dart';

@@ -43,9 +43,9 @@ class GlobalButton extends StatelessWidget {
         child: Center(
           child: Globaltext(
             text: text,
-            fontfamily:fontfamily?? GoogleFonts.inter().toString(),
-            fontweight:fontweight?? FontWeight.w600,
-            color: color?? Colors.white,
+            fontfamily: fontfamily ?? GoogleFonts.inter().toString(),
+            fontweight: fontweight ?? FontWeight.w600,
+            color: color ?? Colors.white,
             fontsize: fontsize,
           ),
         ),

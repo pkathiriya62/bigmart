@@ -24,10 +24,4 @@ class Appimage {
     'assets/image/image-removebg-preview (65) 1.png',
     'assets/image/image-removebg-preview (66) 1.png'
   ];
-  static List<String> shopgridviewimage = [
-    'assets/image/image-removebg-preview (84) 1.png',
-    'assets/image/image-removebg-preview (85) 1.png',
-    'assets/image/image-removebg-preview (86) 1.png',
-    'assets/image/image-removebg-preview (89) 1.png'
-  ];
 }
