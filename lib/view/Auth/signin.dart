@@ -5,19 +5,20 @@ import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
-import 'package:bigmart/view/Auth/otp.dart';
+import 'package:bigmart/view/Auth/createaccount.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({super.key});
+
+class SigninScreen extends StatefulWidget {
+  const SigninScreen({super.key});
 
   @override
-  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -28,80 +29,62 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: height * 0.020,
-            ),
             Globaltext(
-              text: Apptext.createAcctitle,
+              text: Apptext.signintitle,
               fontfamily: GoogleFonts.inter().toString(),
               fontsize: 20,
             ),
             SizedBox(
               height: height * 0.011,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50.0),
-              child: Globaltext(
-                text: Apptext.createAccsubtitle,
-                fontweight: FontWeight.w400,
-                fontfamily: GoogleFonts.inter().toString(),
-              ),
+            Globaltext(
+              text: Apptext.signinsubtitle,
+              fontweight: FontWeight.w400,
+              fontfamily: GoogleFonts.inter().toString(),
             ),
             SizedBox(
-              height: height * 0.032,
-            ),
-            TextFieldWidget(text: 'Name'),
-            SizedBox(
-              height: height * 0.010,
+              height: height * 0.035,
             ),
             const TextFieldWidget(text: 'Email'),
             SizedBox(
-              height: height * 0.010,
+              height: height * 0.029,
             ),
             const TextFieldWidget(
               text: 'Password',
+              icon: Icon(Icons.visibility_off_outlined),
             ),
             SizedBox(
-              height: height * 0.017,
+              height: height * 0.011,
             ),
             Row(
               children: [
-                Container(
-                  height: 20,
-                  width: 20,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: AppColor.textfieldcolor)),
-                ),
-                SizedBox(
-                  width: width * 0.014,
-                ),
+                const Spacer(),
                 Globaltext(
-                  text: Apptext.checkboxtext,
-                  fontfamily: GoogleFonts.inter().toString(),
-                  fontweight: FontWeight.w400,
-                )
+                  text: 'Forgot Password?',
+                  textStyle: TextStyle(
+                      fontSize: 12,
+                      fontFamily: GoogleFonts.inter().toString(),
+                      fontWeight: FontWeight.w400,
+                      color: const Color(0xff5041FC),
+                      decoration: TextDecoration.underline,
+                      decorationColor: const Color(0xff5041FC),
+                      decorationThickness: 2),
+                ),
               ],
             ),
             SizedBox(
-              height: height * 0.025,
+              height: height * 0.036,
             ),
             GlobalButton(
               height: height * 0.054,
               width: double.infinity,
-              voidcallback: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CreateAccountScreen(),
-                  ),
-                );
-              },
-              text: 'Sign Up',
+              voidcallback: () {},
+              text: 'Sign in',
               fontweight: FontWeight.w500,
               fontsize: 18,
             ),
             SizedBox(
-              height: height * 0.031,
+              height: height * 0.050,
             ),
             Row(
               children: [
@@ -133,7 +116,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ],
             ),
             SizedBox(
-              height: height * 0.031,
+              height: height * 0.050,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -177,7 +160,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ],
             ),
             SizedBox(
-              height: height * 0.042,
+              height: height * 0.036,
             ),
             RichText(
               text: TextSpan(
@@ -187,16 +170,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 ),
                 children: [
                   TextSpan(
-                    recognizer: TapGestureRecognizer()
+                    recognizer: new TapGestureRecognizer()
                       ..onTap = () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const VarificationScreen(),
+                            builder: (context) => const CreateAccountScreen(),
                           ),
                         );
                       },
-                    text: Apptext.createAcctext2,
+                    text: Apptext.Signintext2,
                     style: const TextStyle(
                         color: Color(0xff5041FC),
                         decoration: TextDecoration.underline),

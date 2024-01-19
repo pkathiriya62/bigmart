@@ -43,7 +43,7 @@ class _BotttomNavigationbarScreenState
         items: [
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/homepage (5) 1.png',
+                'assets/image/homepage (1) 1.png',
                 height: 24,
                 color:
                     _selectedIndex == 0 ? AppColor.primarycolor : Colors.black,
@@ -51,7 +51,7 @@ class _BotttomNavigationbarScreenState
               label: 'Home'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/shop 1.png',
+                'assets/image/shop 1.png',
                 height: 24,
                 color:
                     _selectedIndex == 1 ? AppColor.primarycolor : Colors.black,
@@ -59,7 +59,7 @@ class _BotttomNavigationbarScreenState
               label: 'Shop'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/pin 1.png',
+                'assets/image/pin 1.png',
                 height: 24,
                 color:
                     _selectedIndex == 2 ? AppColor.primarycolor : Colors.black,
@@ -67,7 +67,7 @@ class _BotttomNavigationbarScreenState
               label: 'Store'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/shopping-basket 1.png',
+                'assets/image/shopping-basket 1.png',
                 height: 24,
                 color:
                     _selectedIndex == 3 ? AppColor.primarycolor : Colors.black,
@@ -75,7 +75,7 @@ class _BotttomNavigationbarScreenState
               label: 'Cart'),
           BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/images/user (6) 1.png',
+                'assets/image/user (6) 1.png',
                 height: 24,
                 color:
                     _selectedIndex == 4 ? AppColor.primarycolor : Colors.black,
