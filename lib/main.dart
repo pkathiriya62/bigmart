@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(360, 800),
+        designSize: const Size(360, 800),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: BotttomNavigationbarScreen(),
+            home: const BotttomNavigationbarScreen(),
           );
         });
   }
