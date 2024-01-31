@@ -46,9 +46,6 @@ class Apptext {
   static String tabOrdertitle = 'My Orders';
   static String mywallettitle = 'My Balance';
 
-
-
-
   static List<String> gridviewname = [
     'Dairy, Br...',
     'Snack & ...',
@@ -70,5 +67,4 @@ class Apptext {
     {"name": "Butter", "subname": "Vegetable oil butter", "qty": "2 × 85g"},
     {"name": "Beer", "subname": "Lager beer", "qty": "1/2 lit"},
   ];
-
 }

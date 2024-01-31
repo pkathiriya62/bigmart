@@ -23,12 +23,12 @@ class Order {
 
   Order(
       {required this.image,
-        required this.deliverd,
-        required this.number,
-        required this.datentime,
-        required this.price,
-        required this.color,
-        this.containercolor});
+      required this.deliverd,
+      required this.number,
+      required this.datentime,
+      required this.price,
+      required this.color,
+      this.containercolor});
 }
 
 List<Order> Orderdata = [
@@ -39,9 +39,7 @@ List<Order> Orderdata = [
       datentime: 'Placed on wed, 19 Oct 30, 12:55 pm',
       price: '930',
       color: AppColor.headcolor,
-      containercolor: AppColor.tabbarContainercolor
-
-  ),
+      containercolor: AppColor.tabbarContainercolor),
   Order(
       image: 'assets/image/shopping-bag (1) 1.png',
       deliverd: 'delivered',
@@ -60,6 +58,7 @@ List<Order> Orderdata = [
     containercolor: Color(0x42a010a3),
   )
 ];
+
 class _MyorderScreenState extends State<MyorderScreen> {
   @override
   Widget build(BuildContext context) {
@@ -71,7 +70,7 @@ class _MyorderScreenState extends State<MyorderScreen> {
             Row(
               children: [
                 Globaltext(
-                  text: Apptext.mywallettitle,
+                  text: Apptext.tabOrdertitle,
                   fontsize: 24,
                   fontfamily: GoogleFonts.inter().toString(),
                   fontweight: FontWeight.w500,
@@ -125,7 +124,7 @@ class _MyorderScreenState extends State<MyorderScreen> {
                                         text: Orderdata[index].deliverd,
                                         fontweight: FontWeight.w600,
                                         fontfamily:
-                                        GoogleFonts.inter().toString(),
+                                            GoogleFonts.inter().toString(),
                                         fontsize: 10,
                                         color: Orderdata[index].color,
                                       ),
@@ -140,7 +139,7 @@ class _MyorderScreenState extends State<MyorderScreen> {
                                         text: Orderdata[index].number,
                                         fontsize: 14,
                                         fontfamily:
-                                        GoogleFonts.inter().toString(),
+                                            GoogleFonts.inter().toString(),
                                         fontweight: FontWeight.w600,
                                         color: AppColor.blackcolor,
                                       ),
@@ -160,7 +159,7 @@ class _MyorderScreenState extends State<MyorderScreen> {
                                       Globaltext(
                                         text: "₹ ${Orderdata[index].price}",
                                         fontfamily:
-                                        GoogleFonts.inter().toString(),
+                                            GoogleFonts.inter().toString(),
                                         fontweight: FontWeight.w500,
                                         fontsize: 14,
                                         color: const Color(0xba0500ff),
