@@ -6,6 +6,7 @@ import 'package:bigmart/utils/common/customappbar.dart';
 import 'package:bigmart/view/tabbarscreens/address.dart';
 import 'package:bigmart/view/tabbarscreens/logout.dart';
 import 'package:bigmart/view/tabbarscreens/myorderscreen.dart';
+// import 'package:bigmart/view/tabbarscreens/myorderscreen.dart';
 import 'package:bigmart/view/tabbarscreens/mywallet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,7 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   // ignore: unused_field
   static List WidgetOption = [
     AddressScreen(),
-    MyOrderScreen(),
+    MyorderScreen(),
     MyWalletScreen(),
     LogOutScreen(),
   ];
@@ -210,7 +211,7 @@ class _ProfileScreenState extends State<ProfileScreen>
           child: TabBarView(
               controller: _tabController, children: [
             AddressScreen(),
-            MyOrderScreen(),
+            MyorderScreen(),
             MyWalletScreen(),
             LogOutScreen(),
           ]),
