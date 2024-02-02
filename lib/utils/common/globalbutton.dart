@@ -12,6 +12,7 @@ class GlobalButton extends StatelessWidget {
   final double? fontsize;
   final dynamic fontweight;
   final String? fontfamily;
+  final onPressed;
 
   const GlobalButton({
     super.key,
@@ -22,7 +23,7 @@ class GlobalButton extends StatelessWidget {
     this.color,
     this.fontsize,
     this.fontweight,
-    this.fontfamily,
+    this.fontfamily, this.onPressed,
   });
 
   @override
