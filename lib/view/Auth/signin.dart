@@ -4,12 +4,12 @@ import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
-import 'package:bigmart/view/Auth/bottomnavigation.dart';
+// import 'package:bigmart/view/Auth/bottomnavigation.dart';
 import 'package:bigmart/view/Auth/createaccount.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
