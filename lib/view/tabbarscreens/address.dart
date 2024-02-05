@@ -30,7 +30,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   fontfamily: GoogleFonts.inter().toString(),
                   fontweight: FontWeight.w500,
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   height: 32.h,
                   width: 100.w,
@@ -45,7 +45,7 @@ class _AddressScreenState extends State<AddressScreen> {
                         Container(
                           height: 16.h,
                           width: 16.w,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               color: Colors.white, shape: BoxShape.circle),
                           child: Icon(
                             Icons.add,

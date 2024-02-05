@@ -54,8 +54,8 @@ List<Order> Orderdata = [
     number: "0RD0432556247",
     datentime: 'Placed on wed, 22 Oct 27, 01:55 pm',
     price: '1080',
-    color: Color(0xff5041FC),
-    containercolor: Color(0x42a010a3),
+    color: const Color(0xff5041FC),
+    containercolor: const Color(0x42a010a3),
   )
 ];
 

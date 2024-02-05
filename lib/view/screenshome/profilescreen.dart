@@ -1,12 +1,8 @@
-
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/customappbar.dart';
-// import 'package:bigmart/utils/common/apptext.dart';
-
 import 'package:bigmart/view/tabbarscreens/address.dart';
 import 'package:bigmart/view/tabbarscreens/logout.dart';
 import 'package:bigmart/view/tabbarscreens/myorderscreen.dart';
-// import 'package:bigmart/view/tabbarscreens/myorderscreen.dart';
 import 'package:bigmart/view/tabbarscreens/mywallet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,10 +28,10 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   // ignore: unused_field
   static List WidgetOption = [
-    AddressScreen(),
-    MyorderScreen(),
-    MyWalletScreen(),
-    LogOutScreen(),
+    const AddressScreen(),
+    const MyorderScreen(),
+    const MyWalletScreen(),
+    const LogOutScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -55,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             child: Scaffold(
               body: Column(
                 children: [
-                  CustomContainer(text: "Profile"),
+                  const CustomContainer(text: "Profile"),
                   Container(
                     height: 100.h,
                     child: Padding(
@@ -210,10 +206,10 @@ class _ProfileScreenState extends State<ProfileScreen>
         Expanded(
           child: TabBarView(
               controller: _tabController, children: [
-            AddressScreen(),
-            MyorderScreen(),
-            MyWalletScreen(),
-            LogOutScreen(),
+            const AddressScreen(),
+            const MyorderScreen(),
+            const MyWalletScreen(),
+            const LogOutScreen(),
           ]),
         )
       ],

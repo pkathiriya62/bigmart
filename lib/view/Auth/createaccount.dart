@@ -49,7 +49,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             SizedBox(
               height: height * 0.032,
             ),
-            TextFieldWidget(text: 'Name'),
+            const TextFieldWidget(text: 'Name'),
             SizedBox(
               height: height * 0.010,
             ),
@@ -118,7 +118,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   fontsize: 12,
                   fontweight: FontWeight.w400,
                   fontfamily: GoogleFonts.inter().toString(),
-                  color: Color(0x8C000000),
+                  color: const Color(0x8C000000),
                 ),
                 SizedBox(
                   width: width * 0.010,

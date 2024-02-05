@@ -105,7 +105,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                        builder: (_) => BotttomNavigationbarScreen()),
+                        builder: (_) => const BotttomNavigationbarScreen()),
                     (route) => false);
               },
               text: 'Verify',
