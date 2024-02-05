@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'globaltext.dart';
 
-class TextFieldWidget extends StatelessWidget {
+class TextFormFieldWidget extends StatelessWidget {
   final String text;
+  final  message;
   final Icon? icon;
+  final validator;
 
-  const TextFieldWidget({super.key, required this.text, this.icon});
+  const TextFormFieldWidget({super.key, required this.text, this.icon, this.validator,  this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,13 @@ class TextFieldWidget extends StatelessWidget {
         SizedBox(
           height: height * 0.010,
         ),
-        TextField(
+        TextFormField(
+            validator: (validator) {
+              if (validator == null || validator.isEmpty) {
+                return message;
+              }
+              return null;
+            },
           decoration: InputDecoration(
             suffixIcon: icon,
             focusedBorder: OutlineInputBorder(

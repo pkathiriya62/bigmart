@@ -49,15 +49,15 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             SizedBox(
               height: height * 0.032,
             ),
-            const TextFieldWidget(text: 'Name'),
+            const TextFormFieldWidget(text: 'Name'),
             SizedBox(
               height: height * 0.010,
             ),
-            const TextFieldWidget(text: 'Email'),
+            const TextFormFieldWidget(text: 'Email'),
             SizedBox(
               height: height * 0.010,
             ),
-            const TextFieldWidget(
+            const TextFormFieldWidget(
               text: 'Password',
             ),
             SizedBox(

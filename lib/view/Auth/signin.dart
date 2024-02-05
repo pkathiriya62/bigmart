@@ -17,14 +17,17 @@ class SigninScreen extends StatefulWidget {
   @override
   State<SigninScreen> createState() => _SigninScreenState();
 }
+
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
+final _formKey = GlobalKey<FormState>();
+
 class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    final _formKey = GlobalKey<FormState>();
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 23.0),
@@ -34,7 +37,9 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50,),
+                const SizedBox(
+                  height: 50,
+                ),
                 Globaltext(
                   text: Apptext.signintitle,
                   fontfamily: GoogleFonts.inter().toString(),
@@ -51,13 +56,17 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   height: height * 0.035,
                 ),
-                const TextFieldWidget(text: 'Email'),
+                TextFormFieldWidget(
+                  text: 'Email',
+                  message: "Email",
+                ),
                 SizedBox(
                   height: height * 0.029,
                 ),
-                const TextFieldWidget(
+                TextFormFieldWidget(
                   text: 'Password',
                   icon: Icon(Icons.visibility_off_outlined),
+                  message: "Password",
                 ),
                 SizedBox(
                   height: height * 0.011,
@@ -82,46 +91,71 @@ class _SigninScreenState extends State<SigninScreen> {
                   height: height * 0.036,
                 ),
                 GlobalButton(
-                 
+                  onPressed: () {
+                    // Validate returns true if the form is valid, or false otherwise.
+                    if (_formKey.currentState!.validate()) {
+                      // If the form is valid, display a snackbar. In the real world,
+                      // you'd often call a server or save the information in a database.
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                    }
+                  },
                   height: height * 0.054,
                   width: double.infinity,
-                  voidcallback: ()async {
-                    if (emailcontroller.text.isNotEmpty &&
-                      passwordcontroller.text.isNotEmpty) {
-                    // if (_rememberMe) {}
-                    SharedPreferences prefs = await SharedPreferences.getInstance();
-                    prefs.setString('username', emailcontroller.text);
-                    // ignore: use_build_context_synchronously
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const BotttomNavigationbarScreen(),
-                      ),
-                    );
-                  } else {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text('Invalid Login'),
-                          content: const Text('Please enter valid username and password'),
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  }
-                  },
+                  // voidcallback: () async {
+                  //   if (emailcontroller.text.isNotEmpty &&
+                  //       passwordcontroller.text.isNotEmpty) {
+                  //     // if (_rememberMe) {}
+                  //     SharedPreferences prefs =
+                  //         await SharedPreferences.getInstance();
+                  //     prefs.setString('username', emailcontroller.text);
+                  //     // ignore: use_build_context_synchronously
+                  //     Navigator.pushReplacement(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             const BotttomNavigationbarScreen(),
+                  //       ),
+                  //     );
+                  //   } else {
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (BuildContext context) {
+                  //         return AlertDialog(
+                  //           title: const Text('Invalid Login'),
+                  //           content: const Text(
+                  //               'Please enter valid username and password'),
+                  //           actions: [
+                  //             TextButton(
+                  //               onPressed: () {
+                  //                 Navigator.of(context).pop();
+                  //               },
+                  //               child: const Text('OK'),
+                  //             ),
+                  //           ],
+                  //         );
+                  //       },
+                      // );
+                    
+                  
                   text: 'Sign in',
                   fontweight: FontWeight.w500,
                   fontsize: 18,
                 ),
+//                 ElevatedButton(
+//   onPressed: () {
+//     // Validate returns true if the form is valid, or false otherwise.
+//     if (_formKey.currentState!.validate()) {
+//       // If the form is valid, display a snackbar. In the real world,
+//       // you'd often call a server or save the information in a database.
+//       ScaffoldMessenger.of(context).showSnackBar(
+//         const SnackBar(content: Text('Processing Data')),
+//       );
+//     }
+//   },
+//   child: const Text('Submit'),
+// ),
                 SizedBox(
                   height: height * 0.050,
                 ),
@@ -214,7 +248,8 @@ class _SigninScreenState extends State<SigninScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const CreateAccountScreen(),
+                                builder: (context) =>
+                                    const CreateAccountScreen(),
                               ),
                             );
                           },

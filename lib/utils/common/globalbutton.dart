@@ -7,7 +7,7 @@ class GlobalButton extends StatelessWidget {
   final double height;
   final double width;
   final voidcallback;
-  final String text;
+  final  text;
   final Color? color;
   final double? fontsize;
   final dynamic fontweight;
@@ -18,8 +18,8 @@ class GlobalButton extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
-    required this.voidcallback,
-    required this.text,
+     this.voidcallback,
+     this.text,
     this.color,
     this.fontsize,
     this.fontweight,
