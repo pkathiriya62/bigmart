@@ -3,6 +3,7 @@ import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/view/Auth/bottomnavigation.dart';
+import 'package:bigmart/view/Auth/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_field_style.dart';
@@ -47,7 +48,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
                   ),
                   children: [
                     TextSpan(
-                      text: Apptext.verifysubtitle2,
+                      text: emailcontroller.text,
                       style: TextStyle(
                           color: AppColor.primarycolor,
                           decoration: TextDecoration.underline),

@@ -6,9 +6,13 @@ import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
 // import 'package:bigmart/view/Auth/bottomnavigation.dart';
 import 'package:bigmart/view/Auth/createaccount.dart';
+import 'package:bigmart/view/screenshome/homescreen.dart';
+// import 'package:bigmart/view/Onbording/logoscreen.dart';
+// import 'package:bigmart/view/screenshome/homescreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -56,14 +60,14 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   height: height * 0.035,
                 ),
-                TextFormFieldWidget(
+                const TextFormFieldWidget(
                   text: 'Email',
                   message: "Email",
                 ),
                 SizedBox(
                   height: height * 0.029,
                 ),
-                TextFormFieldWidget(
+                const TextFormFieldWidget(
                   text: 'Password',
                   icon: Icon(Icons.visibility_off_outlined),
                   message: "Password",
@@ -91,31 +95,38 @@ class _SigninScreenState extends State<SigninScreen> {
                   height: height * 0.036,
                 ),
                 GlobalButton(
-                  onPressed: () {
-                    // Validate returns true if the form is valid, or false otherwise.
+                  height: height * 0.054,
+                  width: double.infinity,
+                  voidcallback: ()async {
                     if (_formKey.currentState!.validate()) {
-                      // If the form is valid, display a snackbar. In the real world,
-                      // you'd often call a server or save the information in a database.
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Processing Data')),
                       );
+                       SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                       prefs.setString('username', emailcontroller.text);
+                      Navigator.pushReplacement(
+                        context,
+                         MaterialPageRoute(
+                           builder: (context) =>
+                               const HomeScreen(),
+                         ),
+                       );
                     }
                   },
-                  height: height * 0.054,
-                  width: double.infinity,
-                  // voidcallback: () async {
+                  // () async {
                   //   if (emailcontroller.text.isNotEmpty &&
                   //       passwordcontroller.text.isNotEmpty) {
-                  //     // if (_rememberMe) {}
+
                   //     SharedPreferences prefs =
                   //         await SharedPreferences.getInstance();
                   //     prefs.setString('username', emailcontroller.text);
-                  //     // ignore: use_build_context_synchronously
+
                   //     Navigator.pushReplacement(
                   //       context,
                   //       MaterialPageRoute(
                   //         builder: (context) =>
-                  //             const BotttomNavigationbarScreen(),
+                  //             const HomeScreen(),
                   //       ),
                   //     );
                   //   } else {
@@ -136,26 +147,12 @@ class _SigninScreenState extends State<SigninScreen> {
                   //           ],
                   //         );
                   //       },
-                      // );
-                    
-                  
+                  //     );
+                  //                   }},
                   text: 'Sign in',
                   fontweight: FontWeight.w500,
                   fontsize: 18,
                 ),
-//                 ElevatedButton(
-//   onPressed: () {
-//     // Validate returns true if the form is valid, or false otherwise.
-//     if (_formKey.currentState!.validate()) {
-//       // If the form is valid, display a snackbar. In the real world,
-//       // you'd often call a server or save the information in a database.
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         const SnackBar(content: Text('Processing Data')),
-//       );
-//     }
-//   },
-//   child: const Text('Submit'),
-// ),
                 SizedBox(
                   height: height * 0.050,
                 ),

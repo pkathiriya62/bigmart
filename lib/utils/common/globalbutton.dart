@@ -3,6 +3,7 @@ import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class GlobalButton extends StatelessWidget {
   final double height;
   final double width;
@@ -14,7 +15,7 @@ class GlobalButton extends StatelessWidget {
   final String? fontfamily;
   final onPressed;
 
-  const GlobalButton({
+   GlobalButton({
     super.key,
     required this.height,
     required this.width,
