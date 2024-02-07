@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "436727063815",
+    "project_id": "bigmart-982b3",
+    "storage_bucket": "bigmart-982b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436727063815:android:9c8fada6139b78f1c4d1a2",
+        "android_client_info": {
+          "package_name": "com.example.bigmart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIXuUsKQi6eRvi3OHvXP-Y80b01iuijtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
