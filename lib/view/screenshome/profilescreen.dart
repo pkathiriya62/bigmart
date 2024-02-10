@@ -1,9 +1,12 @@
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/customappbar.dart';
+import 'package:bigmart/view/Auth/signin.dart';
 import 'package:bigmart/view/tabbarscreens/address.dart';
 import 'package:bigmart/view/tabbarscreens/logout.dart';
 import 'package:bigmart/view/tabbarscreens/myorderscreen.dart';
 import 'package:bigmart/view/tabbarscreens/mywallet.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +28,14 @@ class _ProfileScreenState extends State<ProfileScreen>
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
   }
-
+void logOut() async {
+    await FirebaseAuth.instance.signOut();
+    
+      Navigator.popUntil(context, (route) => route.isFirst);
+      Navigator.pushReplacement(context,
+          CupertinoPageRoute(builder: (context) => const SigninScreen()));
+   
+  }
   // ignore: unused_field
   static List WidgetOption = [
     const AddressScreen(),
@@ -163,21 +173,26 @@ class _ProfileScreenState extends State<ProfileScreen>
                           ),
                           Column(
                             children: [
-                              Container(
-                                height: 38.h,
-                                width: 38.w,
-                                decoration: BoxDecoration(
-                                  color: selectedindex == 3
-                                      ? AppColor.headcolor
-                                      : AppColor.tabbarContainercolor,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.asset(
-                                  'assets/image/logout (4) 1.png',
-                                  scale: 3,
-                                  color: selectedindex == 3
-                                      ? Colors.white
-                                      : AppColor.primarycolor,
+                              InkWell(
+                                onTap: (){
+                                  logOut();
+                                },
+                                child: Container(
+                                  height: 38.h,
+                                  width: 38.w,
+                                  decoration: BoxDecoration(
+                                    color: selectedindex == 3
+                                        ? AppColor.headcolor
+                                        : AppColor.tabbarContainercolor,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset(
+                                    'assets/image/logout (4) 1.png',
+                                    scale: 3,
+                                    color: selectedindex == 3
+                                        ? Colors.white
+                                        : AppColor.primarycolor,
+                                  ),
                                 ),
                               ),
                               SizedBox(

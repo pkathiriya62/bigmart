@@ -1,11 +1,17 @@
+import 'dart:developer';
+
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
 import 'package:bigmart/utils/common/globalbutton.dart';
 import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
+import 'package:bigmart/view/Auth/bottomnavigation.dart';
 import 'package:bigmart/view/Auth/createaccount.dart';
-import 'package:bigmart/view/screenshome/homescreen.dart';
+// import 'package:bigmart/view/screenshome/homescreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+// import 'package:bigmart/view/screenshome/homescreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,6 +29,28 @@ TextEditingController passwordcontroller = TextEditingController();
 final _formKey = GlobalKey<FormState>();
 
 class _SigninScreenState extends State<SigninScreen> {
+  void Signin() async {
+    String email = emailcontroller.text.trim();
+    String passwor = passwordcontroller.text.trim();
+    
+
+    if (email == '' || passwor == '') {
+      log('Please fill in the detail');
+    } else {
+     try {
+        UserCredential userCredential = await FirebaseAuth.instance
+            .signInWithEmailAndPassword(email: email, password: passwor);
+        log('user created');
+        if (userCredential.user != null) {
+          Navigator.popUntil(context, (route) => route.isFirst);
+          Navigator.pushReplacement(
+              context, CupertinoPageRoute(builder: (context) => BotttomNavigationbarScreen()));
+        }
+      } on FirebaseAuthException catch (e) {
+        log(e.code.toString());
+      }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -56,17 +84,19 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   height: height * 0.035,
                 ),
-                const TextFormFieldWidget(
+                 TextFormFieldWidget(
                   text: 'Email',
                   message: "Email",
+                  controller: emailcontroller,
                 ),
                 SizedBox(
                   height: height * 0.029,
                 ),
-                const TextFormFieldWidget(
+                 TextFormFieldWidget(
                   text: 'Password',
                   icon: Icon(Icons.visibility_off_outlined),
                   message: "Password",
+                  controller: passwordcontroller,
                 ),
                 SizedBox(
                   height: height * 0.011,
@@ -94,6 +124,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   height: height * 0.054,
                   width: double.infinity,
                   voidcallback: () async {
+                   Signin();
                     if (_formKey.currentState!.validate()) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Processing Data')),
@@ -102,12 +133,7 @@ class _SigninScreenState extends State<SigninScreen> {
                           await SharedPreferences.getInstance();
                       prefs.setString('username', emailcontroller.text);
                       // ignore: use_build_context_synchronously
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
+                     
                     }
                   },
                   // () async {

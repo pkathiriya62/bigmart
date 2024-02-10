@@ -8,8 +8,9 @@ class TextFormFieldWidget extends StatelessWidget {
   final  message;
   final Icon? icon;
   final validator;
+  final controller;
 
-  const TextFormFieldWidget({super.key, required this.text, this.icon, this.validator,  this.message});
+  const TextFormFieldWidget({super.key, required this.text, this.icon, this.validator,  this.message,this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class TextFormFieldWidget extends StatelessWidget {
           height: height * 0.010,
         ),
         TextFormField(
+          controller: controller,
             validator: (validator) {
               if (validator == null || validator.isEmpty) {
                 return message;
