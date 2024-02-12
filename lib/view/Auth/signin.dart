@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:bigmart/utils/common/appcolor.dart';
 import 'package:bigmart/utils/common/appimage.dart';
 import 'package:bigmart/utils/common/apptext.dart';
@@ -8,10 +7,8 @@ import 'package:bigmart/utils/common/globaltext.dart';
 import 'package:bigmart/utils/common/textfield.dart';
 import 'package:bigmart/view/Auth/bottomnavigation.dart';
 import 'package:bigmart/view/Auth/createaccount.dart';
-// import 'package:bigmart/view/screenshome/homescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-// import 'package:bigmart/view/screenshome/homescreen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
