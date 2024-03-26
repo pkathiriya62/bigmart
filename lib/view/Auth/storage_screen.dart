@@ -1,33 +1,69 @@
+import 'dart:async';
 import 'dart:developer';
-
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:demo_app/view/storage/storage_detail.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:get/get.dart';
 
-class Storagescreenstate extends StatefulWidget {
-  const Storagescreenstate({super.key});
+import 'package:image_picker/image_picker.dart';
+import 'package:uuid/uuid.dart';
+
+class StorageScreen extends StatefulWidget {
+  const StorageScreen({super.key});
 
   @override
-  State<Storagescreenstate> createState() => _StoragescreenstateState();
+  State<StorageScreen> createState() => _StorageScreenState();
 }
 
-class _StoragescreenstateState extends State<Storagescreenstate> {
-  TextEditingController nameController = TextEditingController();
+class _StorageScreenState extends State<StorageScreen> {
+  TextEditingController namecontroller = TextEditingController();
   TextEditingController emailcontroller = TextEditingController();
-  void saveuser() {
-    String name = nameController.text.trim();
+  TextEditingController agecontroller = TextEditingController();
+
+  void saveUser() async {
+    String name = namecontroller.text.trim();
     String email = emailcontroller.text.trim();
-    if (name != "" && email != "") {
-      Map<String, dynamic> userdata = {"name": name, "email": email};
-      nameController.clear();
+    String age = agecontroller.text.trim();
+    int agee = int.parse(age);
+    if (name != "" && email != "" && profilePic != null) {
+      UploadTask uploadtask = FirebaseStorage.instance
+          .ref()
+          .child('profilePictures')
+          .child(const Uuid().v1())
+          .putFile(profilePic!);
+
+      StreamSubscription tasksubscription =
+          uploadtask.snapshotEvents.listen((event) {
+        double percentage = event.bytesTransferred / event.totalBytes * 100;
+        log(percentage.toString());
+      });
+
+      TaskSnapshot taskSnapshot = await uploadtask;
+      String downloadurl = await taskSnapshot.ref.getDownloadURL();
+      tasksubscription.cancel();
+      Map<String, dynamic> userdata = {
+        "name": name,
+        "email": email,
+        "profilepic": downloadurl,
+        "age": agee,
+      };
+      namecontroller.clear();
       emailcontroller.clear();
+      agecontroller.clear();
+      setState(() {
+        profilePic = null;
+      });
       FirebaseFirestore.instance.collection("users").add(userdata);
       log("User created!");
     } else {
-      log("please fill all the fields");
+      log("Please fill all the fields");
     }
   }
 
+  File? profilePic;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,17 +74,61 @@ class _StoragescreenstateState extends State<Storagescreenstate> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            CupertinoButton(
+              padding: EdgeInsets.zero,
+              onPressed: () async {
+                XFile? selectImage =
+                    await ImagePicker().pickImage(source: ImageSource.gallery);
+                if (selectImage != null) {
+                  log('Image Selected!');
+                  File connvertFile = File(selectImage.path);
+                  setState(() {
+                    profilePic = connvertFile;
+                  });
+                } else {
+                  log("No Image Selected!");
+                }
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  CircleAvatar(
+                    backgroundImage:
+                        profilePic != null ? FileImage(profilePic!) : null,
+                    radius: 50,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 80, top: 50),
+                    child: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Colors.pink,
+                      child: Icon(
+                        Icons.edit,
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TextField(
-              controller: nameController,
+              controller: namecontroller,
+              decoration: const InputDecoration(hintText: 'Name'),
             ),
             TextField(
               controller: emailcontroller,
+              decoration: const InputDecoration(hintText:'Email'),
+            ),
+            TextField(
+              controller: agecontroller,
+              decoration: const InputDecoration(hintText: 'Age'),
             ),
             TextButton(
               onPressed: () {
-                saveuser();
+                saveUser();
               },
-              child: const Text('save'),
+               
+              child: const Text('Save'),
             ),
             StreamBuilder<QuerySnapshot>(
               stream:
@@ -63,19 +143,34 @@ class _StoragescreenstateState extends State<Storagescreenstate> {
                           Map<String, dynamic> userdata =
                               snapshot.data!.docs[index].data()
                                   as Map<String, dynamic>;
-                          return ListTile(
-                            title: Text(
-                              userdata['name'],
-                            ),
-                            subtitle: Text(
-                              userdata['email'],
+                          return InkWell(
+                            onTap: () {
+                              // Get.to(StorageDetail(
+                              //   userdata: snapshot.data!.docs[index].data()
+                              //       as Map<String, dynamic>,
+                              // ));
+                            },
+                            child: Card(
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage:
+                                      NetworkImage(userdata['profilepic']),
+                                ),
+                                title: Text(
+                                  userdata["name"],
+                                ),
+                                subtitle: Text(
+                                  userdata["email"],
+                                ),
+                                trailing: Text(userdata['age'].toString()),
+                              ),
                             ),
                           );
                         },
                       ),
                     );
                   } else {
-                    return const Text('No data available');
+                    return const Text("No Data ");
                   }
                 } else {
                   return const Center(

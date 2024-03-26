@@ -1,4 +1,5 @@
 import 'package:bigmart/firebase_options.dart';
+import 'package:bigmart/view/Auth/notificationservice.dart';
 // import 'package:bigmart/view/Auth/createaccount.dart';
 // import 'package:bigmart/view/Auth/signin.dart';
 import 'package:bigmart/view/Auth/storage_screen.dart';
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await NotificationService.initialize();
   runApp(const MyApp());
 }
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const Storagescreenstate(),
+            home: const StorageScreen(),
           );
         });
   }
