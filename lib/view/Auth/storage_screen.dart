@@ -2,12 +2,9 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:demo_app/view/storage/storage_detail.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-
 import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
 
@@ -117,7 +114,7 @@ class _StorageScreenState extends State<StorageScreen> {
             ),
             TextField(
               controller: emailcontroller,
-              decoration: const InputDecoration(hintText:'Email'),
+              decoration: const InputDecoration(hintText: 'Email'),
             ),
             TextField(
               controller: agecontroller,
@@ -127,7 +124,6 @@ class _StorageScreenState extends State<StorageScreen> {
               onPressed: () {
                 saveUser();
               },
-               
               child: const Text('Save'),
             ),
             StreamBuilder<QuerySnapshot>(
